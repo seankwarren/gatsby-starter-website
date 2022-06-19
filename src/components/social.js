@@ -12,32 +12,33 @@ const StyledSocialList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  &:after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0 auto;
-    background-color: var(--lightest-orange);
-  }
+  // &:after {
+  //   content: '';
+  //   display: block;
+  //   width: 1px;
+  //   height: 90px;
+  //   margin: 0 auto;
+  //   background-color: var(--accent-main);
+  // }
   li {
     &:last-of-type {
       margin-bottom: 20px;
     }
     a {
       padding: 10px;
-      color: var(--lightest-orange);
+      color: var(--accent-main);
       text-decoration: none;
       font-size: var(--fz-xxs);
       font-family: var(--font-mono);
-      &:hover,
-        &:focus {
-        transform: translateY(-3px);
-        }
-      svg {
-        width: 20px;
-        height: 20px;
-      }
+      
+      // svg {
+      //   width: 20px;
+      //   height: 20px;
+      // }
+    }
+    &:hover,
+    &:focus {
+      transform: translateX(3px);
     }
   }
 `;

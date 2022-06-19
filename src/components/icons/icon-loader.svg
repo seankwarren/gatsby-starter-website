@@ -55,10 +55,10 @@
         L 221.6573167764842 173.63636363636363 
         L 221.6573167764842 64.54545454545453 
         Z"></animate>
-    <animate class="load" id="anim7" attributeName="stroke" begin="anim5.end+260ms" dur="364ms" fill="freeze" to="#8c8c23"></animate>
+    <animate class="load" id="anim7" attributeName="stroke" begin="anim5.end+260ms" dur="364ms" fill="freeze" to="#cff056"></animate>
     
 </path>
-<path stroke-dasharray="252" stroke-dashoffset="252" id="icon-letter" stroke="#8c8c23" stroke-width="16" fill="none" stroke-linejoin="round" d="M 154 94
+<path stroke-dasharray="252" stroke-dashoffset="252" id="icon-letter" stroke="#cff056" stroke-width="16" fill="none" stroke-linejoin="round" d="M 154 94
     c 0 -30 -56 -30 -56 0 
     c 0 6 0 16 30 24 
     c 30 8 30 20 30 24 

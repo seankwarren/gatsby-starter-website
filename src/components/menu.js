@@ -7,14 +7,14 @@ import { useOnClickOutside } from '@hooks';
 
 const StyledMenu = styled.div`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 768px) {
     display: block;
   }
 `;
 
 const StyledHamburgerButton = styled.button`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 768px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@ const StyledHamburgerButton = styled.button`
     padding: 15px;
     border: 0;
     background-color: transparent;
-    color: inherit;
+    color: var(--accent-main);
     text-transform: none;
     transition-timing-function: linear;
     transition-duration: 0.15s;
@@ -43,7 +43,7 @@ const StyledHamburgerButton = styled.button`
     width: var(--hamburger-width);
     height: 2px;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    background-color: var(--accent-main);
     transition-duration: 0.22s;
     transition-property: transform;
     transition-delay: ${props => (props.menuOpen ? `0.12s` : `0s`)};
@@ -61,7 +61,7 @@ const StyledHamburgerButton = styled.button`
       width: var(--hamburger-width);
       height: 2px;
       border-radius: 4px;
-      background-color: var(--green);
+      background-color: var(--accent-main);
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
@@ -84,7 +84,7 @@ const StyledHamburgerButton = styled.button`
 
 const StyledSidebar = styled.aside`
   display: none;
-  @media (max-width: 507px) {
+  @media (max-width: 768px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@ const StyledSidebar = styled.aside`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--light-navy);
+    background-color: var(--mostly-dark);
     box-shadow: -10px 0px 30px -15px var(--navy-shadow);
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
@@ -105,13 +105,10 @@ const StyledSidebar = styled.aside`
   }
   nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     flex-direction: column;
     color: var(--lightest-slate);
     font-family: var(--font-mono);
-    text-align: center;
   }
   ol {
     padding: 0;
@@ -119,44 +116,47 @@ const StyledSidebar = styled.aside`
     list-style: none;
     width: 100%;
     li {
+      display: flex;
       position: relative;
       margin: 0 auto 20px;
       counter-increment: item 1;
       font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
-      @media (max-width: 507px) {
+      @media (max-width: 768px) {
         margin: 0 auto 10px;
       }
       &:before {
-        content: '0' counter(item) '.';
+        padding-left: 140px;
         display: block;
-        margin-bottom: 5px;
-        color: var(--green);
-        font-size: var(--fz-sm);
+        content: '0' counter(item) '.';
+        color: var(--accent-main);
+        font-size: clamp(var(--fz-sm), 4vw, var(--fz-lg));
       }
     }
     a {
-      display: inline-block;
+      display: flex;
+      padding-top: 0px;
       text-decoration: none;
       text-decoration-skip-ink: auto;
       color: inherit;
       position: relative;
-      transition: var(--transition);
+      //transition: var(--transition);
       &:hover,
       &:active,
       &:focus {
-        color: var(--green);
+        transition: none;
+        color: var(--accent-main);
         outline: 0;
+        text-weight: var(--bold);
       }
       width: 100%;
-      padding: 3px 20px 20px;
+      padding: 0px 20px 20px;
     }
   }
   .resume-link {
-    color: var(--green);
+    color: var(--body);
     background-color: transparent;
-    border: 1px solid var(--green);
+    border: 1px solid var(--body);
     border-radius: var(--border-radius);
-    padding: 1.25rem 1.75rem;
     font-size: var(--fz-sm);
     font-family: var(--font-mono);
     line-height: 1;
@@ -166,7 +166,8 @@ const StyledSidebar = styled.aside`
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--green-tint);
+      border: 1px solid var(--accent-main);
+      color: var(--accent-main);
       outline: none;
     }
     &:after {
@@ -206,7 +207,7 @@ const Menu = () => {
   return (
     <StyledMenu>
       <Helmet>
-        <body />
+        <body className={menuOpen ? 'blur' : ''} />
       </Helmet>
 
       <div ref={wrapperRef}>

@@ -19,12 +19,10 @@ const StyledLoader = styled.div`
   z-index: 99;
   .logo-wrapper {
     width: max-content;
-    max-width: 100px;
+    height: max-content;
     transition: var(--transition);
     opacity: ${props => (props.isMounted ? 1 : 0)};
     svg {
-      display: block;
-      margin: 0 auto;
       fill: none;
       on-click: finishLoading();
       pointer-events: auto;
@@ -39,7 +37,7 @@ const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState();
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 10);
+    const timeout = setTimeout(() => setIsMounted(true));
     return () => clearTimeout(timeout);
   }, []);
 

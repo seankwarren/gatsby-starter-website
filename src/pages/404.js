@@ -1,15 +1,41 @@
-import * as React from "react"
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { Layout } from '@components';
+// import { GlobalStyle } from "@styles"
 
-import Layout from "../components/layout"
-import { GlobalStyle } from "@styles"
+const StyledMainContainer = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+const StyledTitle = styled.h1`
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(100px, 25vw, 200px);
+  line-height: 1;
+`;
+const StyledSubtitle = styled.h2`
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 400;
+`;
 
-const IndexPage = () => (
-  <>
-  <GlobalStyle></GlobalStyle>
-  <Layout>
-    <div>404 Page not found</div>
-  </Layout>
-  </>
-)
+const NotFoundPage = ({ location }) => {
 
-export default IndexPage
+  const content = (
+    <StyledMainContainer className="fillHeight">
+      <StyledTitle>404</StyledTitle>
+      <StyledSubtitle>Page Not Found</StyledSubtitle>
+    </StyledMainContainer>
+  );
+
+  return (
+    <Layout location={location}>
+      {/* <Helmet title="Page Not Found" /> */}
+        <>{content}</>
+    </Layout>
+  );
+
+}
+
+export default NotFoundPage

@@ -1,13 +1,13 @@
 import { css } from 'styled-components';
-
+// https://coolors.co/331d0a-0e142f-c3d9ab-808f87-ece4d5
 const variables = css`
   :root {
-    --dark-forest-green: #121410;
-    --forest-green: #20241c;
-    --green: #8c8c23;
-    --lightest-red: #c99897;
-    --light-orange: #edb372;
-    --lightest-orange: #ebcfb0;
+    --dark-shadow: #0b0c09;
+    --dark: #20231a;
+    --mostly-dark: #161916;
+    --accent-main: #d4f269;
+    --accent-flair: #72a98f;
+    --body: #EEFAC6;
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
